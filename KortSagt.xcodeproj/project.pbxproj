@@ -14,13 +14,13 @@
 		888F4D781AE70CE60019439D /* KortSagtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D771AE70CE60019439D /* KortSagtTests.swift */; };
 		888F4D841AE70E100019439D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D811AE70E100019439D /* HomeViewController.swift */; };
 		888F4D851AE70E100019439D /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D821AE70E100019439D /* ItemViewController.swift */; };
-		888F4D861AE70E100019439D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D831AE70E100019439D /* TableViewController.swift */; };
 		888F4DA11AE70F7B0019439D /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D9E1AE70F7B0019439D /* ImageLoader.swift */; };
 		888F4DA21AE70F7B0019439D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D9F1AE70F7B0019439D /* LoadingView.swift */; };
 		888F4DA31AE70F7B0019439D /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4DA01AE70F7B0019439D /* Toucan.swift */; };
 		888F4DE81AE714320019439D /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 888F4DE71AE714320019439D /* Source */; };
 		888F4DE91AE714440019439D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F4DDC1AE713E20019439D /* Alamofire.framework */; };
 		888F4DEA1AE714440019439D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 888F4DDC1AE713E20019439D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		888F4DEF1AE726E40019439D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4DEE1AE726E40019439D /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,12 +94,12 @@
 		888F4D771AE70CE60019439D /* KortSagtTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KortSagtTests.swift; sourceTree = "<group>"; };
 		888F4D811AE70E100019439D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		888F4D821AE70E100019439D /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
-		888F4D831AE70E100019439D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		888F4D9E1AE70F7B0019439D /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		888F4D9F1AE70F7B0019439D /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		888F4DA01AE70F7B0019439D /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toucan.swift; sourceTree = "<group>"; };
 		888F4DD41AE713E20019439D /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = KortSagt/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		888F4DE71AE714320019439D /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source; sourceTree = "<group>"; };
+		888F4DEE1AE726E40019439D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +150,7 @@
 				888F4DA01AE70F7B0019439D /* Toucan.swift */,
 				888F4D811AE70E100019439D /* HomeViewController.swift */,
 				888F4D821AE70E100019439D /* ItemViewController.swift */,
-				888F4D831AE70E100019439D /* TableViewController.swift */,
+				888F4DEE1AE726E40019439D /* TableViewController.swift */,
 				888F4D5F1AE70CE60019439D /* AppDelegate.swift */,
 				888F4D651AE70CE60019439D /* Main.storyboard */,
 				888F4D681AE70CE60019439D /* Images.xcassets */,
@@ -344,8 +344,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				888F4D601AE70CE60019439D /* AppDelegate.swift in Sources */,
-				888F4D861AE70E100019439D /* TableViewController.swift in Sources */,
 				888F4DA31AE70F7B0019439D /* Toucan.swift in Sources */,
+				888F4DEF1AE726E40019439D /* TableViewController.swift in Sources */,
 				888F4DA11AE70F7B0019439D /* ImageLoader.swift in Sources */,
 				888F4D841AE70E100019439D /* HomeViewController.swift in Sources */,
 				888F4D851AE70E100019439D /* ItemViewController.swift in Sources */,
