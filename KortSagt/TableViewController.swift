@@ -74,7 +74,7 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) as! UITableViewCell //1
+        let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) as!  parallaxCell //1
         var snippet = dataVideo[indexPath.row]["snippet"] as! NSDictionary
        println(indexPath.row)
         var image = snippet["thumbnails"] as! NSDictionary
@@ -91,7 +91,6 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
             imageView.image =   Toucan(image: image!).resize(CGSize(width: 640, height: 360), fitMode: Toucan.Resize.FitMode.Crop).image
             
         })
-       // imageView.hnk_setImageFromURL(url!)
         cell.backgroundView = imageView;
       
       
@@ -108,7 +107,14 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
         presentViewController(controller, animated: true, completion: nil)
         
     }
-    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        if let visibleCells = tableView!.visibleCells() as? [parallaxCell] {
+            for cell in visibleCells {
+                cell.tableView(tableView!, didScrollOnView: view)
+            }
+        }
+    }
 
 }
 

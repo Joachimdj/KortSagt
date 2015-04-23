@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8802F6C71AE87E74008CD407 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */; };
+		8802F6C91AE88EFD008CD407 /* parallaxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802F6C81AE88EFD008CD407 /* parallaxCell.swift */; };
 		888F4D601AE70CE60019439D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D5F1AE70CE60019439D /* AppDelegate.swift */; };
 		888F4D671AE70CE60019439D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888F4D651AE70CE60019439D /* Main.storyboard */; };
 		888F4D691AE70CE60019439D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888F4D681AE70CE60019439D /* Images.xcassets */; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		8802F6C81AE88EFD008CD407 /* parallaxCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = parallaxCell.swift; path = Source/parallaxCell.swift; sourceTree = "<group>"; };
 		888F4D5A1AE70CE60019439D /* KortSagt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KortSagt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F4D5E1AE70CE60019439D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888F4D5F1AE70CE60019439D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */,
+				8802F6C81AE88EFD008CD407 /* parallaxCell.swift */,
 				888F4DE71AE714320019439D /* Source */,
 				888F4D9E1AE70F7B0019439D /* ImageLoader.swift */,
 				888F4D9F1AE70F7B0019439D /* LoadingView.swift */,
@@ -346,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8802F6C91AE88EFD008CD407 /* parallaxCell.swift in Sources */,
 				888F4D601AE70CE60019439D /* AppDelegate.swift in Sources */,
 				888F4DA31AE70F7B0019439D /* Toucan.swift in Sources */,
 				888F4DEF1AE726E40019439D /* TableViewController.swift in Sources */,
