@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TableViewController().loadNewVideo()
        /* var image = dataVideo[0]["thumbnail"] as NSDictionary
         var imageView1 = UIImageView()
         var imageString = image["hqDefault"] as String
@@ -32,7 +33,16 @@ class HomeViewController: UIViewController {
                 
         }
     }
-
+    @IBAction func SupriceMe(sender: AnyObject) {
+       var int =   dataVideo.count
+         let random =  randomInt(0,max: dataVideo.count)
+        selectedVideo = random
+        let controller = storyboard?.instantiateViewControllerWithIdentifier("item") as! ItemViewController
+        presentViewController(controller, animated: true, completion: nil)
+    }
+    func randomInt(min: Int, max:Int) -> Int {
+        return min + Int(arc4random_uniform(UInt32(max - min + 1)))
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

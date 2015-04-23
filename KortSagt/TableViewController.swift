@@ -13,9 +13,9 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet var table: UITableView!
     func loadNewVideo(){
-        self.view.addSubview(loading)
+     if(self.table != nil){    self.view.addSubview(loading)
         loading.startLoading()
-        loading.addStartingOpacity(3.5)
+        loading.addStartingOpacity(3.5)}
         
         Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCBBSZunZagb4bDBi3PSqd7Q&order=date&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&maxResults=50&part=snippet,contentDetails", parameters:nil)
             
@@ -31,7 +31,7 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
                // println(dataVideo[0])
                   var description1 = dataVideo[0]["description"]
                 
-                self.table.reloadData()
+                if(self.table != nil){ self.table.reloadData()}
                 self.loading.removeFromSuperview()
                 self.refreshCtrl.endRefreshing()
                 self.loadingStatus == false

@@ -28,8 +28,7 @@ class ItemViewController: UIViewController {
             .responseJSON { (req, res, dataFromNetworking, error) in
                 let json = JSON(dataFromNetworking!)
                 self.desc   =    json["items"][0]["snippet"]["localized"]["description"].string!
-           
-                println(self.desc)
+            
                 self.TextArea.text = "\(self.desc)"
         }
     
