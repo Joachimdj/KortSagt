@@ -17,25 +17,24 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
         loading.startLoading()
         loading.addStartingOpacity(3.5)
         
-        Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCBBSZunZagb4bDBi3PSqd7Q&order=date&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&callback=items&maxResults=50", parameters:nil)
+        Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCBBSZunZagb4bDBi3PSqd7Q&order=date&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&maxResults=50&part=snippet,contentDetails", parameters:nil)
             
             .responseJSON { (req, res, JSON, error) in
                 if(error != nil) {
                     NSLog("GET Error: \(error)")
                     println(res)
                 }
-                println(JSON)
-               /* var response = JSON as! NSDictionary
                
-                var response1 = response["data"] as! NSDictionary
-                 dataVideo = response1["items"] as! NSArray
-                println(dataVideo[0])
+               var response = JSON as! NSDictionary
+               dataVideo = response["items"] as! NSArray
+               
+               // println(dataVideo[0])
                   var description1 = dataVideo[0]["description"]
                 
                 self.table.reloadData()
                 self.loading.removeFromSuperview()
                 self.refreshCtrl.endRefreshing()
-                self.loadingStatus == false */
+                self.loadingStatus == false
         }
         
         
@@ -76,11 +75,13 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) as! UITableViewCell //1
-    
-        var image = dataVideo[indexPath.row]["thumbnail"]as! NSDictionary
-        
-        var imageString = image["hqDefault"] as! String
-        
+        var snippet = dataVideo[indexPath.row]["snippet"] as! NSDictionary
+       println(indexPath.row)
+        var image = snippet["thumbnails"] as! NSDictionary
+        var image1 = image["high"] as! NSDictionary
+        var image2 = image1["url"] as! NSString
+        println(image2)
+        var imageString = "\(image2)";
         
         
         var imageView = UIImageView(frame: CGRectMake(0, -1, cell.frame.width, cell.frame.height))

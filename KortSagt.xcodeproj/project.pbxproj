@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8802F6C71AE87E74008CD407 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */; };
 		888F4D601AE70CE60019439D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D5F1AE70CE60019439D /* AppDelegate.swift */; };
 		888F4D671AE70CE60019439D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888F4D651AE70CE60019439D /* Main.storyboard */; };
 		888F4D691AE70CE60019439D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 888F4D681AE70CE60019439D /* Images.xcassets */; };
@@ -83,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
 		888F4D5A1AE70CE60019439D /* KortSagt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KortSagt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		888F4D5E1AE70CE60019439D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		888F4D5F1AE70CE60019439D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		888F4D5C1AE70CE60019439D /* KortSagt */ = {
 			isa = PBXGroup;
 			children = (
+				8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */,
 				888F4DE71AE714320019439D /* Source */,
 				888F4D9E1AE70F7B0019439D /* ImageLoader.swift */,
 				888F4D9F1AE70F7B0019439D /* LoadingView.swift */,
@@ -346,6 +349,7 @@
 				888F4D601AE70CE60019439D /* AppDelegate.swift in Sources */,
 				888F4DA31AE70F7B0019439D /* Toucan.swift in Sources */,
 				888F4DEF1AE726E40019439D /* TableViewController.swift in Sources */,
+				8802F6C71AE87E74008CD407 /* SwiftyJSON.swift in Sources */,
 				888F4DA11AE70F7B0019439D /* ImageLoader.swift in Sources */,
 				888F4D841AE70E100019439D /* HomeViewController.swift in Sources */,
 				888F4D851AE70E100019439D /* ItemViewController.swift in Sources */,
@@ -552,6 +556,7 @@
 				888F4D7D1AE70CE60019439D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		888F4D7E1AE70CE60019439D /* Build configuration list for PBXNativeTarget "KortSagtTests" */ = {
 			isa = XCConfigurationList;
@@ -560,6 +565,7 @@
 				888F4D801AE70CE60019439D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

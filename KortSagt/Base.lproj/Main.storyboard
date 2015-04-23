@@ -8,7 +8,6 @@
         <!--Næste show-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
                 <viewController id="9pv-A4-QxB" customClass="HomeViewController" customModule="KortSagt" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
@@ -109,19 +108,20 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="0Rl-5v-D4W"/>
-                                <exclude reference="Tut-uI-sUn"/>
                                 <exclude reference="0hW-p9-CiD"/>
                                 <exclude reference="9Ed-33-e8o"/>
+                                <exclude reference="MXh-VL-Nge"/>
+                                <exclude reference="Tut-uI-sUn"/>
                                 <exclude reference="ovF-zs-AtU"/>
+                                <exclude reference="rIi-WF-yJk"/>
                                 <exclude reference="ylU-9m-9cH"/>
                                 <exclude reference="zhx-yt-JI0"/>
-                                <exclude reference="rIi-WF-yJk"/>
-                                <exclude reference="MXh-VL-Nge"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Næste show" image="cam" id="acW-dT-cKf"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="578" y="186"/>
         </scene>

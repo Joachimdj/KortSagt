@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class HomeViewController: UIViewController {
 
@@ -22,7 +23,14 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     })*/
       //  headerTalkimage.addSubview(imageView1)
-         
+        Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/videos?id=AWyGgKc02GA&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&part=snippet", parameters:nil)
+            
+            .responseJSON { (req, res, dataFromNetworking, error) in
+                let json = JSON(dataFromNetworking!)
+                  let description = json["items"][0]["snippet"]["localized"]["description"].string
+                    println(description)
+                
+        }
     }
 
     override func didReceiveMemoryWarning() {
