@@ -21,6 +21,7 @@ class ItemViewController: UIViewController {
     var    desc = "";
     override func viewDidLoad() {
         var videoId = id["videoId"] as! NSString
+        
         super.viewDidLoad()
         
         Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/videos?id=\(videoId)&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&part=snippet", parameters:nil)
