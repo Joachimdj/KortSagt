@@ -15,30 +15,19 @@ class ItemViewController: UIViewController {
     @IBOutlet weak var TextArea: UITextView!
      
     @IBOutlet weak var webView: UIWebView!
-    var id = dataVideo[selectedVideo]["id"] as! NSDictionary
+    var videoId = imageId[selectedVideo]
+   // var desc = imageDesc[selectedVideo]
     
-     var snippet = dataVideo[selectedVideo]["snippet"] as! NSDictionary
-    var    desc = "";
     override func viewDidLoad() {
-        var videoId = id["videoId"] as! NSString
+        
         
         super.viewDidLoad()
-        
-        Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/videos?id=\(videoId)&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&part=snippet", parameters:nil)
-            
-            .responseJSON { (req, res, dataFromNetworking, error) in
-                let json = JSON(dataFromNetworking!)
-                self.desc   =    json["items"][0]["snippet"]["localized"]["description"].string!
-            
-                self.TextArea.text = "\(self.desc)"
-        }
-    
+     
+       // self.TextArea.text = "\(self.desc)"
+       
         // Do any additional setup after loading the view.
         
         
-  
-        
-       
         var url1 = NSURL(string: "https://www.youtube.com/embed/\(videoId)?rel=0&autoplay=1&modestbranding=1&autohide=1&showinfo=0&controls=0")
         var request = NSURLRequest(URL: url1!)
         webView.scrollView.bounces = false
