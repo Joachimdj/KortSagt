@@ -1,9 +1,10 @@
- 
 
 import UIKit
 import Alamofire
 var  dataVideo  = []
- var selectedVideo = 0;
+var selectedVideo = 0;
+var imageLinks = [""]
+var imageId = [""]
 class TableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
     var loading = LoadingView();
     
@@ -11,36 +12,59 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     var refreshCtrl = UIRefreshControl()
     var loadingStatus = false
     
+    var nextPageToken = "";
+    var prevPageToken = "";
+    var alreadyRunned = false
+    
+    
     @IBOutlet var table: UITableView!
-    func loadNewVideo(){
-     if(self.table != nil){    self.view.addSubview(loading)
-        loading.startLoading()
-        loading.addStartingOpacity(3.5)}
+    
+    
+    
+    func loadNewVideo1(){
+        var imageId = [""]
+        var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCBBSZunZagb4bDBi3PSqd7Q&order=date&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&maxResults=50&part=snippet,contentDetails&pageToken=\(nextPageToken)"
         
-        Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCBBSZunZagb4bDBi3PSqd7Q&order=date&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&maxResults=50&part=snippet,contentDetails", parameters:nil)
+        Alamofire.request(.GET, url, parameters:nil)
             
-            .responseJSON { (req, res, JSON, error) in
+            .responseJSON { (req, res, dataFromNetworking, error) in
                 if(error != nil) {
                     NSLog("GET Error: \(error)")
                     println(res)
                 }
-               
-               var response = JSON as! NSDictionary
-               dataVideo = response["items"] as! NSArray
-               
-               // println(dataVideo[0])
-                  var description1 = dataVideo[0]["description"]
+                let json = JSON(dataFromNetworking!)
                 
-                if(self.table != nil){ self.table.reloadData()}
-                self.loading.removeFromSuperview()
-                self.refreshCtrl.endRefreshing()
-                self.loadingStatus == false
+                var reponse = json["items"]
+                var count = json["items"].count;
+                for var i = 0; i <= count; i++
+                {
+                    if(json["items"][i]["id"]["videoId"] != nil){
+                        imageId.append(json["items"][i]["id"]["videoId"].string!)
+                    }
+                    println(" \(i) = \(count)")
+                }
+                
+              
+                if(json["prevPageToken"] != nil){self.prevPageToken =   json["prevPageToken"].string!  }
+                if(json["nextPageToken"] != nil){ self.nextPageToken = json["nextPageToken"].string!  }
+                
+                if(json["nextPageToken"].string != nil) {
+                    
+                    self.loadNewVideo1()
+                    
+                    
+                }
+                if(self.table != nil){self.refreshCtrl.endRefreshing()
+                    self.table.reloadData()
+                    self.nextPageToken = ""
+                }
         }
         
         
         
+        
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,12 +72,13 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
         self.view.addSubview(loading)
         loading.startLoading()
         loading.addStartingOpacity(3.5)
-        loadNewVideo()
-        refreshCtrl.addTarget(self, action: "loadNewVideo", forControlEvents: .ValueChanged)
+        self.loading.removeFromSuperview()
+        self.refreshCtrl.endRefreshing()
+        refreshCtrl.addTarget(self, action: "loadNewVideo1", forControlEvents: .ValueChanged)
         tableView?.addSubview(refreshCtrl)
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,31 +94,29 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return dataVideo.count
+        return imageId.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) as!  parallaxCell //1
-        var snippet = dataVideo[indexPath.row]["snippet"] as! NSDictionary
-       println(indexPath.row)
-        var image = snippet["thumbnails"] as! NSDictionary
-        var image1 = image["high"] as! NSDictionary
-        var image2 = image1["url"] as! NSString
-        println(image2)
-        var imageString = "\(image2)";
+        let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) as! UITableViewCell //1
         
-        
-        var imageView = UIImageView(frame: CGRectMake(0, -1, cell.frame.width, cell.frame.height))
-        println(imageString)
-        var url = NSURL(string: imageString)
-        ImageLoader.sharedLoader.imageForUrl(imageString, completionHandler:{(image: UIImage?, url: String) in
-            imageView.image =   Toucan(image: image!).resize(CGSize(width: 640, height: 360), fitMode: Toucan.Resize.FitMode.Crop).image
+   //     var imageString = "\(imageLinks[indexPath.row])"
+     //   println("\(imageString)")
+         var idString = "https://i.ytimg.com/vi/\(imageId[indexPath.row])/hqdefault.jpg"
+         if(idString != ""){
+            var imageView = UIImageView(frame: CGRectMake(0, -1, cell.frame.width, cell.frame.height))
+      
+            var url = NSURL(string: idString)
+            ImageLoader.sharedLoader.imageForUrl(idString, completionHandler:{(image: UIImage?, url: String) in
+                imageView.image =   Toucan(image: image!).resize(CGSize(width: 640, height: 360), fitMode: Toucan.Resize.FitMode.Crop).image
+                
+            })
+            // imageView.hnk_setImageFromURL(url!)
+            cell.backgroundView = imageView;
             
-        })
-        cell.backgroundView = imageView;
-      
-      
+        }
+        
         return cell
     }
     override func prefersStatusBarHidden() -> Bool {
@@ -102,19 +125,11 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("Hej");
-         selectedVideo = indexPath.row
-         let controller = storyboard?.instantiateViewControllerWithIdentifier("item") as! ItemViewController
+        selectedVideo = indexPath.row
+        let controller = storyboard?.instantiateViewControllerWithIdentifier("item") as! ItemViewController
         presentViewController(controller, animated: true, completion: nil)
         
     }
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
-        
-        if let visibleCells = tableView!.visibleCells() as? [parallaxCell] {
-            for cell in visibleCells {
-                cell.tableView(tableView!, didScrollOnView: view)
-            }
-        }
-    }
-
+    
+    
 }
-

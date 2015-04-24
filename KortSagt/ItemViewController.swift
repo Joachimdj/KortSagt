@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Social
 
 class ItemViewController: UIViewController {
 
@@ -15,43 +16,37 @@ class ItemViewController: UIViewController {
     @IBOutlet weak var TextArea: UITextView!
      
     @IBOutlet weak var webView: UIWebView!
-    var id = dataVideo[selectedVideo]["id"] as! NSDictionary
+    var videoId = imageId[selectedVideo]
+    var url1 =  NSURL(string: "")
+   // var desc = imageDesc[selectedVideo]
     
-     var snippet = dataVideo[selectedVideo]["snippet"] as! NSDictionary
-    var    desc = "";
     override func viewDidLoad() {
-        var videoId = id["videoId"] as! NSString
-        
-        super.viewDidLoad()
-        
         Alamofire.request(.GET, "https://www.googleapis.com/youtube/v3/videos?id=\(videoId)&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&part=snippet", parameters:nil)
             
             .responseJSON { (req, res, dataFromNetworking, error) in
                 let json = JSON(dataFromNetworking!)
-                self.desc   =    json["items"][0]["snippet"]["localized"]["description"].string!
-            
-                self.TextArea.text = "\(self.desc)"
+        
+               self.TextArea.text = json["items"][0]["snippet"]["description"].string
+                
+                
         }
-    
+
+        
+        super.viewDidLoad()
+     
+      
+       
         // Do any additional setup after loading the view.
         
         
-  
-        
-       
-        var url1 = NSURL(string: "https://www.youtube.com/embed/\(videoId)?rel=0&autoplay=1&modestbranding=1&autohide=1&showinfo=0&controls=0")
+         url1 = NSURL(string: "https://www.youtube.com/embed/\(videoId)?rel=0&autoplay=1&modestbranding=1&autohide=1&showinfo=0&controls=0")
         var request = NSURLRequest(URL: url1!)
         webView.scrollView.bounces = false
         webView.loadRequest(request)
       
         
     }
-    @IBAction func playVideo(sender: AnyObject) {
-        
-        var url1 = NSURL(string: "https://www.youtube.com/embed/CBKiPMeXit0?start=1")
-        var request = NSURLRequest(URL: url1!)
-         webView.loadRequest(request)
-    }
+ 
  
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,7 +57,20 @@ class ItemViewController: UIViewController {
          self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil);
         
     }
-     
+    @IBAction func share(sender: AnyObject) {
+        let data = "https://www.youtube.com/watch?v=\(videoId)"
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeFacebook){
+            var facebookSheet:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            facebookSheet.setInitialText("Endnu en fed Kort sagt talk. Se den her \(data) eller i vores iPhone app i App store")
+            self.presentViewController(facebookSheet, animated: true, completion: nil)
+        } else {
+            var alert = UIAlertController(title: "Facebook konto", message: "Log venligst ind på Facebook, via din enhed.", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+    }
+
+  
     /*
     // MARK: - Navigation
 
