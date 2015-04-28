@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>7AD3F3F9-C459-4AD6-846E-564A5A1752B3</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>KortSagt</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3CE19932DE602FF8113EAA9C923F9FC5FE883A3B</key>
 		<string>https://github.com/Joachimdj/KortSagt.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>KortSagt.xcodeproj/project.xcworkspace</string>
+	<string>KortSagt.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3CE19932DE602FF8113EAA9C923F9FC5FE883A3B</key>
