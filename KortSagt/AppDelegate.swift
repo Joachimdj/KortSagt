@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Joachim Dittman. All rights reserved.
 //
 
-import UIKit
+import UIKit  
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -40,7 +40,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
+        
+        if self.window?.rootViewController?.presentedViewController is ItemViewController {
+            
+            let secondController = self.window!.rootViewController?.presentedViewController as! ItemViewController
+            
+            if secondController.isPresented == true {
+                return Int(UIInterfaceOrientationMask.All.rawValue);
+            } else {
+                return Int(UIInterfaceOrientationMask.Portrait.rawValue);
+            }
+        } else {
+            return Int(UIInterfaceOrientationMask.Portrait.rawValue);
+        }
+        
+    }
 
 }
 

@@ -16,12 +16,11 @@
 		888F4D841AE70E100019439D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D811AE70E100019439D /* HomeViewController.swift */; };
 		888F4D851AE70E100019439D /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D821AE70E100019439D /* ItemViewController.swift */; };
 		888F4DA11AE70F7B0019439D /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D9E1AE70F7B0019439D /* ImageLoader.swift */; };
-		888F4DA21AE70F7B0019439D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4D9F1AE70F7B0019439D /* LoadingView.swift */; };
 		888F4DA31AE70F7B0019439D /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4DA01AE70F7B0019439D /* Toucan.swift */; };
 		888F4DE81AE714320019439D /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 888F4DE71AE714320019439D /* Source */; };
-		888F4DE91AE714440019439D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F4DDC1AE713E20019439D /* Alamofire.framework */; };
-		888F4DEA1AE714440019439D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 888F4DDC1AE713E20019439D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		888F4DEF1AE726E40019439D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4DEE1AE726E40019439D /* TableViewController.swift */; };
+		8898CB391AEFD7E100EBFC5D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F4DDC1AE713E20019439D /* Alamofire.framework */; };
+		8898CB3A1AEFD7E100EBFC5D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 888F4DDC1AE713E20019439D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,13 +38,6 @@
 			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
-		888F4DDD1AE713E20019439D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 888F4DD41AE713E20019439D /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
-			remoteInfo = "Alamofire OSX";
-		};
 		888F4DDF1AE713E20019439D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 888F4DD41AE713E20019439D /* Alamofire.xcodeproj */;
@@ -53,14 +45,7 @@
 			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS Tests";
 		};
-		888F4DE11AE713E20019439D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 888F4DD41AE713E20019439D /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
-			remoteInfo = "Alamofire OSX Tests";
-		};
-		888F4DEB1AE714440019439D /* PBXContainerItemProxy */ = {
+		8898CB3B1AEFD7E100EBFC5D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 888F4DD41AE713E20019439D /* Alamofire.xcodeproj */;
 			proxyType = 1;
@@ -70,13 +55,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		888F4DED1AE714440019439D /* Embed Frameworks */ = {
+		8898CB3D1AEFD7E100EBFC5D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				888F4DEA1AE714440019439D /* Alamofire.framework in Embed Frameworks */,
+				8898CB3A1AEFD7E100EBFC5D /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,11 +82,11 @@
 		888F4D811AE70E100019439D /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		888F4D821AE70E100019439D /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		888F4D9E1AE70F7B0019439D /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		888F4D9F1AE70F7B0019439D /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		888F4DA01AE70F7B0019439D /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toucan.swift; sourceTree = "<group>"; };
 		888F4DD41AE713E20019439D /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = KortSagt/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		888F4DE71AE714320019439D /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source; sourceTree = "<group>"; };
 		888F4DEE1AE726E40019439D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		8898CB201AEFD2EB00EBFC5D /* KortSagt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KortSagt-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				888F4DE91AE714440019439D /* Alamofire.framework in Frameworks */,
+				8898CB391AEFD7E100EBFC5D /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,10 +131,9 @@
 		888F4D5C1AE70CE60019439D /* KortSagt */ = {
 			isa = PBXGroup;
 			children = (
-				8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */,
 				888F4DE71AE714320019439D /* Source */,
+				8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */,
 				888F4D9E1AE70F7B0019439D /* ImageLoader.swift */,
-				888F4D9F1AE70F7B0019439D /* LoadingView.swift */,
 				888F4DA01AE70F7B0019439D /* Toucan.swift */,
 				888F4D811AE70E100019439D /* HomeViewController.swift */,
 				888F4D821AE70E100019439D /* ItemViewController.swift */,
@@ -159,6 +143,7 @@
 				888F4D681AE70CE60019439D /* Images.xcassets */,
 				888F4D6A1AE70CE60019439D /* LaunchScreen.xib */,
 				888F4D5D1AE70CE60019439D /* Supporting Files */,
+				8898CB201AEFD2EB00EBFC5D /* KortSagt-Bridging-Header.h */,
 			);
 			path = KortSagt;
 			sourceTree = "<group>";
@@ -199,9 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				888F4DDC1AE713E20019439D /* Alamofire.framework */,
-				888F4DDE1AE713E20019439D /* Alamofire.framework */,
 				888F4DE01AE713E20019439D /* Alamofire iOS Tests.xctest */,
-				888F4DE21AE713E20019439D /* Alamofire OSX Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,12 +199,12 @@
 				888F4D561AE70CE60019439D /* Sources */,
 				888F4D571AE70CE60019439D /* Frameworks */,
 				888F4D581AE70CE60019439D /* Resources */,
-				888F4DED1AE714440019439D /* Embed Frameworks */,
+				8898CB3D1AEFD7E100EBFC5D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				888F4DEC1AE714440019439D /* PBXTargetDependency */,
+				8898CB3C1AEFD7E100EBFC5D /* PBXTargetDependency */,
 			);
 			name = KortSagt;
 			productName = KortSagt;
@@ -257,6 +240,7 @@
 				TargetAttributes = {
 					888F4D591AE70CE60019439D = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 7PR3DG58P8;
 					};
 					888F4D701AE70CE60019439D = {
 						CreatedOnToolsVersion = 6.3;
@@ -297,25 +281,11 @@
 			remoteRef = 888F4DDB1AE713E20019439D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		888F4DDE1AE713E20019439D /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 888F4DDD1AE713E20019439D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		888F4DE01AE713E20019439D /* Alamofire iOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Alamofire iOS Tests.xctest";
 			remoteRef = 888F4DDF1AE713E20019439D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		888F4DE21AE713E20019439D /* Alamofire OSX Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "Alamofire OSX Tests.xctest";
-			remoteRef = 888F4DE11AE713E20019439D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -353,7 +323,6 @@
 				888F4DA11AE70F7B0019439D /* ImageLoader.swift in Sources */,
 				888F4D841AE70E100019439D /* HomeViewController.swift in Sources */,
 				888F4D851AE70E100019439D /* ItemViewController.swift in Sources */,
-				888F4DA21AE70F7B0019439D /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,10 +342,10 @@
 			target = 888F4D591AE70CE60019439D /* KortSagt */;
 			targetProxy = 888F4D721AE70CE60019439D /* PBXContainerItemProxy */;
 		};
-		888F4DEC1AE714440019439D /* PBXTargetDependency */ = {
+		8898CB3C1AEFD7E100EBFC5D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
-			targetProxy = 888F4DEB1AE714440019439D /* PBXContainerItemProxy */;
+			targetProxy = 8898CB3B1AEFD7E100EBFC5D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -487,9 +456,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joachim Dittman (7U28YNNV83)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joachim Dittman (7U28YNNV83)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/joachimdittman/Downloads/ParsePlatform-PushTutorial-7026ad4",
+					2/iOS,
+				);
 				INFOPLIST_FILE = KortSagt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KortSagt/KortSagt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -497,9 +478,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Joachim Dittman (7U28YNNV83)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joachim Dittman (7U28YNNV83)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"/Users/joachimdittman/Downloads/ParsePlatform-PushTutorial-7026ad4",
+					2/iOS,
+				);
 				INFOPLIST_FILE = KortSagt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "KortSagt/KortSagt-Bridging-Header.h";
 			};
 			name = Release;
 		};

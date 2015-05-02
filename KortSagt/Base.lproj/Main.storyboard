@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49J-yC-q3Z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49J-yC-q3Z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -32,13 +32,7 @@
                                     <constraint firstAttribute="height" constant="74" id="Xy2-F0-W1q"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Næste event - 12/05/2015 kl.18:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lta-2O-3dm">
-                                <rect key="frame" x="16" y="188" width="568" height="35"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="København Bibliotek" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK3-a8-Dht">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Afventer sted" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QK3-a8-Dht">
                                 <rect key="frame" x="16" y="219" width="568" height="35"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -70,17 +64,25 @@
                                     <constraint firstAttribute="height" constant="97" id="crY-II-Jph"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Næste event - Afventer dato" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lta-2O-3dm">
+                                <rect key="frame" x="0.0" y="188" width="600" height="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a10-dk-7df" firstAttribute="top" secondItem="Vzs-vs-dHp" secondAttribute="topMargin" id="0Rl-5v-D4W"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a10-dk-7df" secondAttribute="trailing" constant="-16" id="0hW-p9-CiD"/>
+                            <constraint firstItem="Lta-2O-3dm" firstAttribute="leading" secondItem="Vzs-vs-dHp" secondAttribute="leadingMargin" constant="-16" id="79K-pT-bxc"/>
                             <constraint firstItem="8RY-V6-JEL" firstAttribute="leading" secondItem="Vzs-vs-dHp" secondAttribute="leadingMargin" constant="-25" id="7lP-Cv-Ede"/>
                             <constraint firstItem="8RY-V6-JEL" firstAttribute="top" secondItem="Vzs-vs-dHp" secondAttribute="topMargin" id="8TC-0D-yOW"/>
                             <constraint firstItem="a10-dk-7df" firstAttribute="leading" secondItem="Vzs-vs-dHp" secondAttribute="leadingMargin" constant="-16" id="9Ed-33-e8o"/>
                             <constraint firstAttribute="centerX" secondItem="QK3-a8-Dht" secondAttribute="centerX" id="AXO-bd-qCh"/>
                             <constraint firstItem="GW0-M6-0ql" firstAttribute="leading" secondItem="Vzs-vs-dHp" secondAttribute="leadingMargin" constant="-25" id="ByC-Nv-6PK"/>
                             <constraint firstItem="GW0-M6-0ql" firstAttribute="top" secondItem="Z5X-Kq-zqj" secondAttribute="bottom" constant="77" id="Czx-i3-zxv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Lta-2O-3dm" secondAttribute="trailing" constant="-16" id="EYP-yT-ZBm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8RY-V6-JEL" secondAttribute="trailing" constant="-25" id="Ico-XJ-cfu"/>
                             <constraint firstAttribute="centerX" secondItem="a10-dk-7df" secondAttribute="centerX" id="KZq-Vn-BCh"/>
                             <constraint firstItem="a10-dk-7df" firstAttribute="bottom" secondItem="Vzs-vs-dHp" secondAttribute="bottomMargin" id="MXh-VL-Nge"/>
@@ -96,7 +98,9 @@
                             <constraint firstItem="Z5X-Kq-zqj" firstAttribute="trailing" secondItem="Vzs-vs-dHp" secondAttribute="trailingMargin" id="crJ-pk-5aT"/>
                             <constraint firstItem="a10-dk-7df" firstAttribute="leading" secondItem="Vzs-vs-dHp" secondAttribute="leadingMargin" constant="-25" id="fzQ-vE-JZn"/>
                             <constraint firstItem="G3a-kB-O7p" firstAttribute="trailing" secondItem="Vzs-vs-dHp" secondAttribute="trailingMargin" id="in0-Sm-BJ5"/>
+                            <constraint firstItem="Lta-2O-3dm" firstAttribute="top" secondItem="Z5X-Kq-zqj" secondAttribute="bottom" constant="85" id="jac-qi-G3L"/>
                             <constraint firstItem="G3a-kB-O7p" firstAttribute="top" secondItem="QK3-a8-Dht" secondAttribute="bottom" constant="30" id="jic-3N-wwW"/>
+                            <constraint firstAttribute="centerX" secondItem="Lta-2O-3dm" secondAttribute="centerX" id="kV5-5d-n3s"/>
                             <constraint firstAttribute="centerX" secondItem="a10-dk-7df" secondAttribute="centerX" id="ovF-zs-AtU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="a10-dk-7df" secondAttribute="trailing" constant="-25" id="qQw-oV-PFK"/>
                             <constraint firstItem="a10-dk-7df" firstAttribute="top" secondItem="Vzs-vs-dHp" secondAttribute="topMargin" id="rIi-WF-yJk"/>
@@ -119,10 +123,16 @@
                                 <exclude reference="rIi-WF-yJk"/>
                                 <exclude reference="ylU-9m-9cH"/>
                                 <exclude reference="zhx-yt-JI0"/>
+                                <exclude reference="VMD-Xn-xO5"/>
+                                <exclude reference="tqu-zn-Fzw"/>
                             </mask>
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Næste show" image="cam" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="date" destination="Lta-2O-3dm" id="2Nz-cB-N6p"/>
+                        <outlet property="place" destination="QK3-a8-Dht" id="PSE-sx-Qos"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,10 +182,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Zbx-Tt-6Df">
-                                <rect key="frame" x="0.0" y="0.0" width="618" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" pagingEnabled="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIb-OY-o8I">
-                                <rect key="frame" x="0.0" y="269" width="600" height="282"/>
+                                <rect key="frame" x="0.0" y="261" width="600" height="339"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -189,37 +199,32 @@
                                                 <action selector="close:" destination="vXe-kO-e3E" id="ZPR-IK-KuU"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Del" id="hl8-OK-WKg">
-                                            <connections>
-                                                <action selector="playVideo:" destination="vXe-kO-e3E" id="U9n-6Z-T6f"/>
-                                            </connections>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scalesPageToFit="YES" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzd-Pq-2cx">
                                 <rect key="frame" x="0.0" y="44" width="600" height="217"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="WsG-Th-dNG"/>
-                                </constraints>
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ec2-G8-MV9" secondAttribute="trailing" constant="-16" id="0fN-rm-uY1"/>
-                            <constraint firstItem="Ec2-G8-MV9" firstAttribute="leading" secondItem="kw8-wJ-buM" secondAttribute="leadingMargin" constant="-16" id="5MH-yC-yar"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hIb-OY-o8I" secondAttribute="trailing" constant="-16" id="6bZ-lZ-Paj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Zbx-Tt-6Df" secondAttribute="trailing" constant="-34" id="Eya-e5-z2Y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wzd-Pq-2cx" secondAttribute="trailing" constant="-16" id="NQq-hQ-Rdb"/>
-                            <constraint firstItem="wzd-Pq-2cx" firstAttribute="top" secondItem="Ec2-G8-MV9" secondAttribute="bottom" id="PKA-2s-3Ti"/>
-                            <constraint firstItem="wzd-Pq-2cx" firstAttribute="leading" secondItem="kw8-wJ-buM" secondAttribute="leadingMargin" constant="-16" id="R4W-z1-Fp8"/>
-                            <constraint firstItem="Zbx-Tt-6Df" firstAttribute="top" secondItem="act-pL-h1b" secondAttribute="bottom" id="Xkf-I8-bCF"/>
-                            <constraint firstItem="Vmu-Ny-gpE" firstAttribute="top" secondItem="Zbx-Tt-6Df" secondAttribute="bottom" id="ixf-oB-EOZ"/>
-                            <constraint firstItem="Ec2-G8-MV9" firstAttribute="top" secondItem="act-pL-h1b" secondAttribute="bottom" id="mMU-NN-vrU"/>
-                            <constraint firstItem="hIb-OY-o8I" firstAttribute="leading" secondItem="kw8-wJ-buM" secondAttribute="leadingMargin" constant="-16" id="oAO-fy-YhU"/>
-                            <constraint firstItem="Zbx-Tt-6Df" firstAttribute="leading" secondItem="kw8-wJ-buM" secondAttribute="leadingMargin" constant="-16" id="xif-PK-V6b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hIb-OY-o8I" secondAttribute="trailing" constant="-16" id="1XZ-b8-8uJ"/>
+                            <constraint firstItem="hIb-OY-o8I" firstAttribute="top" secondItem="wzd-Pq-2cx" secondAttribute="bottom" id="2Ex-Wm-Fh7"/>
+                            <constraint firstItem="Vmu-Ny-gpE" firstAttribute="top" secondItem="hIb-OY-o8I" secondAttribute="bottom" id="2as-9k-c3Z"/>
+                            <constraint firstItem="Zbx-Tt-6Df" firstAttribute="leading" secondItem="kw8-wJ-buM" secondAttribute="leadingMargin" constant="-16" id="FXg-DE-xl4"/>
+                            <constraint firstItem="Vmu-Ny-gpE" firstAttribute="top" secondItem="Zbx-Tt-6Df" secondAttribute="bottom" id="Kj9-lz-4hr"/>
+                            <constraint firstItem="Zbx-Tt-6Df" firstAttribute="top" secondItem="act-pL-h1b" secondAttribute="bottom" id="LtD-7K-Xqd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ec2-G8-MV9" secondAttribute="trailing" constant="-16" id="Lyc-3q-xNN"/>
+                            <constraint firstItem="wzd-Pq-2cx" firstAttribute="leading" secondItem="kw8-wJ-buM" secondAttribute="leadingMargin" constant="-16" id="PHs-G7-yA7"/>
+                            <constraint firstItem="wzd-Pq-2cx" firstAttribute="top" secondItem="Ec2-G8-MV9" secondAttribute="bottom" id="aDD-Kl-UnL"/>
+                            <constraint firstAttribute="centerX" secondItem="wzd-Pq-2cx" secondAttribute="centerX" id="aKA-w6-Db2"/>
+                            <constraint firstItem="Ec2-G8-MV9" firstAttribute="leading" secondItem="kw8-wJ-buM" secondAttribute="leadingMargin" constant="-16" id="hVu-5y-D2k"/>
+                            <constraint firstItem="hIb-OY-o8I" firstAttribute="leading" secondItem="kw8-wJ-buM" secondAttribute="leadingMargin" constant="-16" id="kCp-LQ-Osg"/>
+                            <constraint firstItem="Ec2-G8-MV9" firstAttribute="top" secondItem="act-pL-h1b" secondAttribute="bottom" id="kp7-UO-Lky"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wzd-Pq-2cx" secondAttribute="trailing" constant="-16" id="m4d-tA-yxO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zbx-Tt-6Df" secondAttribute="trailing" constant="-16" id="vPz-aX-dCF"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
