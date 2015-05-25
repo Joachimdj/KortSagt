@@ -10,15 +10,16 @@ import UIKit
 import Alamofire
 var nextPageToken = "";
 var prevPageToken = "";
-
-class HomeViewController: UIViewController {
 var isPresented = false
+class HomeViewController: UIViewController {
+ 
     @IBOutlet weak var date: UILabel!
-    
+        var animator : ARNModalTransitonAnimator?
     @IBOutlet weak var place: UILabel!
     override func viewDidLoad() {
+     
         super.viewDidLoad()
-        imageId.removeAll(keepCapacity: true)
+        videos.removeAll(keepCapacity: true)
         loadNewVideo()
         let parameters : [ String : String] = [
             "access_token": "535078339963418|0cad57a5c0680b105fdb6a3bb6f71a72",
@@ -27,7 +28,11 @@ var isPresented = false
         Alamofire.request(.GET, "https://graph.facebook.com/v2.3/kortsagt.nu/events", parameters:parameters)
             
             .responseJSON { (req, res, dataFromNetworking, error) in
-           
+                if(error != nil) {
+                    NSLog("GET Error: \(error)")
+                    
+                }
+                if(dataFromNetworking != nil){
                 let json = JSON(dataFromNetworking!)
                 
                 let imageString = json["data"][0]["cover"]["source"].string
@@ -42,8 +47,11 @@ var isPresented = false
                     var dateStr = df.stringFromDate(date!)
                     var dateNext = "Næste event"
                     var dateString1 = "\(dateNext) \(dateStr)"
-                    
-                
+                    let dateNow = NSDate()
+                    println(dateNow)
+                    println(date)
+                    println(date!.compare(dateNow).rawValue)
+                    if(date!.compare(dateNow).rawValue == 1){
                     // Fade out to set the text
                     UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                         self.place.alpha = 0.0
@@ -61,7 +69,7 @@ var isPresented = false
                                 self.date.alpha = 1.0
                                 }, completion: nil)
                     })
-                
+                }
                // self.place.text = place
                
            
@@ -74,7 +82,7 @@ var isPresented = false
                 })
                 }
                 }
-                
+                }
                 
         }
        
@@ -91,41 +99,56 @@ var isPresented = false
             .responseJSON { (req, res, dataFromNetworking, error) in
                 if(error != nil) {
                     NSLog("GET Error: \(error)")
-                 
+                    println(res)
                 }
-                let json = JSON(dataFromNetworking!)
-                
-                var reponse = json["items"]
-                var count = json["items"].count;
-                for var i = 0; i <= count; i++
-                {   
-                    if(json["items"][i]["id"]["videoId"] != nil){
-                        imageId.append(json["items"][i]["id"]["videoId"].string!)
-                         }  
-                     println(" \(i) = \(count)")
-                }
-                
-                //   imageLinks.append(dataVideo)
-                if(json["prevPageToken"] != nil){prevPageToken =   json["prevPageToken"].string!  }
-                if(json["nextPageToken"] != nil){ nextPageToken = json["nextPageToken"].string!  }
-                
-                if(json["nextPageToken"].string != nil) {
+                if(dataFromNetworking != nil){
+                    let json = JSON(dataFromNetworking!)
                     
-                    self.loadNewVideo()
-               
+                    var reponse = json["items"]
+                    var count = json["items"].count;
+                    for var i = 0; i <= count; i++
+                    {
+                        if(json["items"][i]["id"]["videoId"] != nil){
+                            videos.append(Video(id:json["items"][i]["id"]["videoId"].string! ,
+                                name:json["items"][i]["snippet"]["title"].string!,
+                                desc:json["items"][i]["snippet"]["description"].string!))
+                        }
+                        println(" \(i) = \(count)")
+                    }
+                    
+                    
+                    if(json["prevPageToken"] != nil){prevPageToken =   json["prevPageToken"].string!  }
+                    if(json["nextPageToken"] != nil){ nextPageToken = json["nextPageToken"].string!  }
+                    
+                    if(json["nextPageToken"].string != nil) {
+                        
+                        self.loadNewVideo()
+                        
                    
                 } 
         }
-        
+        }
         
     }
 
     @IBAction func SupriceMe(sender: AnyObject) {
-       
-         let random =  randomInt(0,max: imageId.count)
+       is_searching = false
+        if(videos.count>0){
+         let random =  randomInt(0,max: videos.count)
         selectedVideo = random
-        let controller = storyboard?.instantiateViewControllerWithIdentifier("item") as! ItemViewController
-        presentViewController(controller, animated: true, completion: nil)
+        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        var modalVC: ItemViewController = storyboard.instantiateViewControllerWithIdentifier("item") as! ItemViewController
+        var navController = UINavigationController(rootViewController: modalVC)
+        
+       //   self.animator = ARNModalTransitonAnimator(modalViewController: navController)
+        
+       //   self.animator!.transitionDuration = 0.7
+      //    self.animator!.direction = .Bottom
+        
+        
+       //   navController.transitioningDelegate = self.animator!
+        self.presentViewController(navController, animated: true, completion: nil)
+        }
     }
     func randomInt(min: Int, max:Int) -> Int {
         return min + Int(arc4random_uniform(UInt32(max - min + 1)))
@@ -148,5 +171,11 @@ var isPresented = false
     */
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> Int {
+        
+            return Int(UIInterfaceOrientationMask.Portrait.rawValue);
+        
+        
     }
 }
