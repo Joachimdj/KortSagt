@@ -1,15 +1,15 @@
 
 import UIKit
-import Alamofire 
+import Alamofire
+import SwiftyJSON
 var selectedVideo = 0;
 var videos = [Video]()
 // filtered search results
 var filteredVideos = [Video]()
  var is_searching:Bool!
 
-class TableViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
-  
-    var animator : ARNModalTransitonAnimator?
+class TableViewController: UITableViewController {
+   
     var refreshCtrl = UIRefreshControl()
     var loadingStatus = false
     
@@ -28,20 +28,16 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
             videos.removeAll()
             filteredVideos.removeAll()
         }
-        var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCBBSZunZagb4bDBi3PSqd7Q&order=date&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&maxResults=50&part=snippet,contentDetails&pageToken=\(nextPageToken)"
+        let url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCBBSZunZagb4bDBi3PSqd7Q&order=date&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&maxResults=50&part=snippet,contentDetails&pageToken=\(nextPageToken)"
         
-        Alamofire.request(.GET, url, parameters:nil)
+        Alamofire.request(.GET, url,encoding: .URLEncodedInURL).responseJSON { response in
             
-            .responseJSON { (req, res, dataFromNetworking, error) in
-                if(error != nil) {
-                    NSLog("GET Error: \(error)")
-                    println(res)
-                }
-                if(dataFromNetworking != nil){
-                let json = JSON(dataFromNetworking!)
+            switch response.result {
+            case .Success(let data):
+                let json = JSON(data)
                 
-                var reponse = json["items"]
-                var count = json["items"].count;
+                _ = json["items"]
+                let count = json["items"].count;
                 for var i = 0; i <= count; i++
                 {
                     if(json["items"][i]["id"]["videoId"] != nil){
@@ -50,7 +46,7 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
                             desc:json["items"][i]["snippet"]["description"].string!))
                         
                     }
-                    println(" \(i) = \(count)")
+                    print(" \(i) = \(count)")
                 }
                 
               
@@ -69,7 +65,12 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
                     is_searching = false
                     self.searchBarSearchButtonClicked(self.search)
                 }
-        }
+            case .Failure(let error):
+                print("Request failed with error: \(error)")
+                
+            
+            }
+            
         
         }
         
@@ -79,7 +80,7 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var text = self.search.text
+        _ = self.search.text
         is_searching = false
         isPresented = false
          
@@ -109,7 +110,7 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) as! UITableViewCell //1
+        let cell = tableView.dequeueReusableCellWithIdentifier("ImageCell", forIndexPath: indexPath) //1
         var idString = "" 
          
         if is_searching == true{
@@ -119,9 +120,9 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
         {idString = "https://i.ytimg.com/vi/\(videos[indexPath.row].id)/hqdefault.jpg"
         }
          if(idString != ""){
-            var imageView = UIImageView(frame: CGRectMake(0, -1, cell.frame.width, cell.frame.height))
+            let imageView = UIImageView(frame: CGRectMake(0, -1, cell.frame.width, cell.frame.height))
       
-            var url = NSURL(string: idString)
+            _ = NSURL(string: idString)
             ImageLoader.sharedLoader.imageForUrl(idString, completionHandler:{(image: UIImage?, url: String) in
               imageView.image =   Toucan(image: image!).resize(CGSize(width: 640, height: 360), fitMode: Toucan.Resize.FitMode.Crop).image
               
@@ -139,9 +140,9 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedVideo = indexPath.row
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        var modalVC: ItemViewController = storyboard.instantiateViewControllerWithIdentifier("item") as! ItemViewController
-        var navController = UINavigationController(rootViewController: modalVC)
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let modalVC: ItemViewController = storyboard.instantiateViewControllerWithIdentifier("item") as! ItemViewController
+        let navController = UINavigationController(rootViewController: modalVC)
         
         //  self.animator = ARNModalTransitonAnimator(modalViewController: navController)
        //
@@ -155,18 +156,18 @@ class TableViewController: UITableViewController, UITableViewDelegate, UITableVi
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
-        if searchBar.text.isEmpty{
+        if searchBar.text!.isEmpty{
             is_searching = false
             tableView.reloadData()
         } else {
-            println("search text %@ ",searchBar.text as NSString)
+            print("search text %@ ",searchBar.text! as NSString)
             is_searching = true
             filteredVideos.removeAll()
             for var index = 0; index < videos.count; index++
             {
-                var currentString = "\(videos[index].name) \(videos[index].desc)"
+                let currentString = "\(videos[index].name) \(videos[index].desc)"
                 if currentString.lowercaseString.rangeOfString(searchText.lowercaseString)  != nil {
-                    println(videos[index].name)
+                    print(videos[index].name)
                     filteredVideos.append(videos[index])
                     
                 }

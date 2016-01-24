@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8802F6C71AE87E74008CD407 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */; };
 		8806E1341B0EC700009B3BB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8806E1331B0EC700009B3BB4 /* Foundation.framework */; };
 		8806E1361B0EC76B009B3BB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8806E1351B0EC76B009B3BB4 /* UIKit.framework */; };
 		881389771B100E3A0076CB83 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881389761B100E3A0076CB83 /* Video.swift */; };
@@ -22,9 +21,6 @@
 		888F4DA31AE70F7B0019439D /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4DA01AE70F7B0019439D /* Toucan.swift */; };
 		888F4DE81AE714320019439D /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 888F4DE71AE714320019439D /* Source */; };
 		888F4DEF1AE726E40019439D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F4DEE1AE726E40019439D /* TableViewController.swift */; };
-		88939D881B1367B500C70CEB /* ARNModalTransitonAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88939D871B1367B500C70CEB /* ARNModalTransitonAnimator.swift */; };
-		8898CB391AEFD7E100EBFC5D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888F4DDC1AE713E20019439D /* Alamofire.framework */; };
-		8898CB3A1AEFD7E100EBFC5D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 888F4DDC1AE713E20019439D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		88D53F491AF50DDD00F79A04 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F481AF50DDD00F79A04 /* AudioToolbox.framework */; };
 		88D53F4B1AF50DE400F79A04 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F4A1AF50DE400F79A04 /* CFNetwork.framework */; };
 		88D53F4D1AF50DEA00F79A04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F4C1AF50DEA00F79A04 /* CoreGraphics.framework */; };
@@ -35,14 +31,9 @@
 		88D53F571AF50E2000F79A04 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F561AF50E2000F79A04 /* Security.framework */; };
 		88D53F591AF50E2900F79A04 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F581AF50E2900F79A04 /* StoreKit.framework */; };
 		88D53F5B1AF50E3200F79A04 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F5A1AF50E3200F79A04 /* SystemConfiguration.framework */; };
-		88D53F621AF5106E00F79A04 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F5C1AF5106E00F79A04 /* Bolts.framework */; };
-		88D53F631AF5106E00F79A04 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F5D1AF5106E00F79A04 /* Parse.framework */; };
-		88D53F641AF5106E00F79A04 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F5E1AF5106E00F79A04 /* ParseCrashReporting.framework */; };
-		88D53F651AF5106E00F79A04 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F5F1AF5106E00F79A04 /* ParseFacebookUtils.framework */; };
-		88D53F661AF5106E00F79A04 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F601AF5106E00F79A04 /* ParseFacebookUtilsV4.framework */; };
-		88D53F671AF5106E00F79A04 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F611AF5106E00F79A04 /* ParseUI.framework */; };
 		88D53F691AF510C700F79A04 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D53F681AF510C700F79A04 /* libsqlite3.0.dylib */; };
 		88DBF69B1AF52F350062E8BF /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DBF69A1AF52F350062E8BF /* SettingViewController.swift */; };
+		C800065D97E70C1C3F369D18 /* Pods_KortSagt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950103D16C60AA2EE0672C45 /* Pods_KortSagt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,31 +58,11 @@
 			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS Tests";
 		};
-		8898CB3B1AEFD7E100EBFC5D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 888F4DD41AE713E20019439D /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8898CB3D1AEFD7E100EBFC5D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8898CB3A1AEFD7E100EBFC5D /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		00B01822E5414CDEFE043B2B /* Pods-KortSagt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KortSagt.release.xcconfig"; path = "Pods/Target Support Files/Pods-KortSagt/Pods-KortSagt.release.xcconfig"; sourceTree = "<group>"; };
+		46997142B1E8CBF4ED1169A5 /* Pods-KortSagt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KortSagt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KortSagt/Pods-KortSagt.debug.xcconfig"; sourceTree = "<group>"; };
 		8806E1331B0EC700009B3BB4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8806E1351B0EC76B009B3BB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		881389761B100E3A0076CB83 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
@@ -111,7 +82,6 @@
 		888F4DD41AE713E20019439D /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = KortSagt/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		888F4DE71AE714320019439D /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source; sourceTree = "<group>"; };
 		888F4DEE1AE726E40019439D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		88939D871B1367B500C70CEB /* ARNModalTransitonAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARNModalTransitonAnimator.swift; sourceTree = "<group>"; };
 		8898CB201AEFD2EB00EBFC5D /* KortSagt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KortSagt-Bridging-Header.h"; sourceTree = "<group>"; };
 		88D53F481AF50DDD00F79A04 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		88D53F4A1AF50DE400F79A04 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -123,14 +93,9 @@
 		88D53F561AF50E2000F79A04 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		88D53F581AF50E2900F79A04 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		88D53F5A1AF50E3200F79A04 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		88D53F5C1AF5106E00F79A04 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Downloads/parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
-		88D53F5D1AF5106E00F79A04 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Downloads/parse-library-1/Parse.framework"; sourceTree = "<group>"; };
-		88D53F5E1AF5106E00F79A04 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "../../../Downloads/parse-library-1/ParseCrashReporting.framework"; sourceTree = "<group>"; };
-		88D53F5F1AF5106E00F79A04 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "../../../Downloads/parse-library-1/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
-		88D53F601AF5106E00F79A04 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "../../../Downloads/parse-library-1/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
-		88D53F611AF5106E00F79A04 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "../../../Downloads/parse-library-1/ParseUI.framework"; sourceTree = "<group>"; };
 		88D53F681AF510C700F79A04 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		88DBF69A1AF52F350062E8BF /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		950103D16C60AA2EE0672C45 /* Pods_KortSagt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KortSagt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,20 +109,14 @@
 				88D53F5B1AF50E3200F79A04 /* SystemConfiguration.framework in Frameworks */,
 				88D53F591AF50E2900F79A04 /* StoreKit.framework in Frameworks */,
 				88D53F571AF50E2000F79A04 /* Security.framework in Frameworks */,
-				88D53F621AF5106E00F79A04 /* Bolts.framework in Frameworks */,
 				88D53F551AF50E1B00F79A04 /* MobileCoreServices.framework in Frameworks */,
-				88D53F641AF5106E00F79A04 /* ParseCrashReporting.framework in Frameworks */,
 				88D53F531AF50E1500F79A04 /* QuartzCore.framework in Frameworks */,
-				88D53F631AF5106E00F79A04 /* Parse.framework in Frameworks */,
-				88D53F651AF5106E00F79A04 /* ParseFacebookUtils.framework in Frameworks */,
-				88D53F671AF5106E00F79A04 /* ParseUI.framework in Frameworks */,
 				88D53F511AF50DFA00F79A04 /* libz.dylib in Frameworks */,
-				88D53F661AF5106E00F79A04 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				88D53F4F1AF50DF200F79A04 /* CoreLocation.framework in Frameworks */,
 				88D53F4D1AF50DEA00F79A04 /* CoreGraphics.framework in Frameworks */,
 				88D53F4B1AF50DE400F79A04 /* CFNetwork.framework in Frameworks */,
 				88D53F491AF50DDD00F79A04 /* AudioToolbox.framework in Frameworks */,
-				8898CB391AEFD7E100EBFC5D /* Alamofire.framework in Frameworks */,
+				C800065D97E70C1C3F369D18 /* Pods_KortSagt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +130,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E06F849FA8B982D24C06385 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46997142B1E8CBF4ED1169A5 /* Pods-KortSagt.debug.xcconfig */,
+				00B01822E5414CDEFE043B2B /* Pods-KortSagt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7E977FB8F50B07968A9035A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				950103D16C60AA2EE0672C45 /* Pods_KortSagt.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		888F4D511AE70CE60019439D = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +156,8 @@
 				888F4D5C1AE70CE60019439D /* KortSagt */,
 				888F4D741AE70CE60019439D /* KortSagtTests */,
 				888F4D5B1AE70CE60019439D /* Products */,
+				1E06F849FA8B982D24C06385 /* Pods */,
+				7E977FB8F50B07968A9035A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,8 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				888F4DE71AE714320019439D /* Source */,
-				8802F6C61AE87E74008CD407 /* SwiftyJSON.swift */,
-				88939D871B1367B500C70CEB /* ARNModalTransitonAnimator.swift */,
 				888F4D5F1AE70CE60019439D /* AppDelegate.swift */,
 				888F4D9E1AE70F7B0019439D /* ImageLoader.swift */,
 				888F4DA01AE70F7B0019439D /* Toucan.swift */,
@@ -244,12 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				88D53F681AF510C700F79A04 /* libsqlite3.0.dylib */,
-				88D53F5C1AF5106E00F79A04 /* Bolts.framework */,
-				88D53F5D1AF5106E00F79A04 /* Parse.framework */,
-				88D53F5E1AF5106E00F79A04 /* ParseCrashReporting.framework */,
-				88D53F5F1AF5106E00F79A04 /* ParseFacebookUtils.framework */,
-				88D53F601AF5106E00F79A04 /* ParseFacebookUtilsV4.framework */,
-				88D53F611AF5106E00F79A04 /* ParseUI.framework */,
 				88D53F5A1AF50E3200F79A04 /* SystemConfiguration.framework */,
 				88D53F581AF50E2900F79A04 /* StoreKit.framework */,
 				88D53F561AF50E2000F79A04 /* Security.framework */,
@@ -281,15 +251,16 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 888F4D7B1AE70CE60019439D /* Build configuration list for PBXNativeTarget "KortSagt" */;
 			buildPhases = (
+				F492DC26D8E70370B96A3DA9 /* Check Pods Manifest.lock */,
 				888F4D561AE70CE60019439D /* Sources */,
 				888F4D571AE70CE60019439D /* Frameworks */,
 				888F4D581AE70CE60019439D /* Resources */,
-				8898CB3D1AEFD7E100EBFC5D /* Embed Frameworks */,
+				2C334906F28203C0F677B789 /* Embed Pods Frameworks */,
+				ADDA618FCE5D43E4EEB7910E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8898CB3C1AEFD7E100EBFC5D /* PBXTargetDependency */,
 			);
 			name = KortSagt;
 			productName = KortSagt;
@@ -320,7 +291,9 @@
 		888F4D521AE70CE60019439D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Joachim Dittman";
 				TargetAttributes = {
 					888F4D591AE70CE60019439D = {
@@ -396,6 +369,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C334906F28203C0F677B789 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KortSagt/Pods-KortSagt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADDA618FCE5D43E4EEB7910E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KortSagt/Pods-KortSagt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F492DC26D8E70370B96A3DA9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		888F4D561AE70CE60019439D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -404,11 +425,9 @@
 				888F4D601AE70CE60019439D /* AppDelegate.swift in Sources */,
 				888F4DA31AE70F7B0019439D /* Toucan.swift in Sources */,
 				888F4DEF1AE726E40019439D /* TableViewController.swift in Sources */,
-				8802F6C71AE87E74008CD407 /* SwiftyJSON.swift in Sources */,
 				881389771B100E3A0076CB83 /* Video.swift in Sources */,
 				888F4DA11AE70F7B0019439D /* ImageLoader.swift in Sources */,
 				88DBF69B1AF52F350062E8BF /* SettingViewController.swift in Sources */,
-				88939D881B1367B500C70CEB /* ARNModalTransitonAnimator.swift in Sources */,
 				888F4D841AE70E100019439D /* HomeViewController.swift in Sources */,
 				888F4D851AE70E100019439D /* ItemViewController.swift in Sources */,
 			);
@@ -429,11 +448,6 @@
 			isa = PBXTargetDependency;
 			target = 888F4D591AE70CE60019439D /* KortSagt */;
 			targetProxy = 888F4D721AE70CE60019439D /* PBXContainerItemProxy */;
-		};
-		8898CB3C1AEFD7E100EBFC5D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire iOS";
-			targetProxy = 8898CB3B1AEFD7E100EBFC5D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -478,6 +492,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -542,6 +557,7 @@
 		};
 		888F4D7C1AE70CE60019439D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46997142B1E8CBF4ED1169A5 /* Pods-KortSagt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -557,6 +573,7 @@
 				INFOPLIST_FILE = KortSagt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JoachimDittman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KortSagt/KortSagt-Bridging-Header.h";
@@ -567,6 +584,7 @@
 		};
 		888F4D7D1AE70CE60019439D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00B01822E5414CDEFE043B2B /* Pods-KortSagt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -582,6 +600,7 @@
 				INFOPLIST_FILE = KortSagt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JoachimDittman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "KortSagt/KortSagt-Bridging-Header.h";
@@ -603,6 +622,7 @@
 				);
 				INFOPLIST_FILE = KortSagtTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JoachimDittman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KortSagt.app/KortSagt";
 			};
@@ -618,6 +638,7 @@
 				);
 				INFOPLIST_FILE = KortSagtTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "JoachimDittman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KortSagt.app/KortSagt";
 			};

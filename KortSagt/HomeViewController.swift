@@ -8,13 +8,14 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+
 var nextPageToken = "";
 var prevPageToken = "";
 var isPresented = false
 class HomeViewController: UIViewController {
  
     @IBOutlet weak var date: UILabel!
-        var animator : ARNModalTransitonAnimator?
     @IBOutlet weak var place: UILabel!
     override func viewDidLoad() {
      
@@ -25,32 +26,30 @@ class HomeViewController: UIViewController {
             "access_token": "535078339963418|0cad57a5c0680b105fdb6a3bb6f71a72",
             "fields": "cover,start_time,name,place"
         ]
-        Alamofire.request(.GET, "https://graph.facebook.com/v2.3/kortsagt.nu/events", parameters:parameters)
+        let url = "https://graph.facebook.com/v2.3/kortsagt.nu/events"
+        
+        Alamofire.request(.GET, url,encoding: .URLEncodedInURL,parameters:parameters).responseJSON { response in
             
-            .responseJSON { (req, res, dataFromNetworking, error) in
-                if(error != nil) {
-                    NSLog("GET Error: \(error)")
-                    
-                }
-                if(dataFromNetworking != nil){
-                let json = JSON(dataFromNetworking!)
-                
+            switch response.result {
+            case .Success(let data):
+                let json = JSON(data)
+      
                 let imageString = json["data"][0]["cover"]["source"].string
-                 var place = json["data"][0]["place"]["name"].string
-                 var date1 = json["data"][0]["start_time"].string
+                 let place = json["data"][0]["place"]["name"].string
+                 let date1 = json["data"][0]["start_time"].string
                 if(date1 != nil){
-                    var df = NSDateFormatter()
+                    let df = NSDateFormatter()
                     //Wed Dec 01 17:08:03 +0000 2010
                     df.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
-                    var date = df.dateFromString(date1!)
+                    let date = df.dateFromString(date1!)
                     df.dateFormat = "dd-MM-yyyy HH:mm"
-                    var dateStr = df.stringFromDate(date!)
-                    var dateNext = "Næste event"
-                    var dateString1 = "\(dateNext) \(dateStr)"
+                    let dateStr = df.stringFromDate(date!)
+                    let dateNext = "Næste event"
+                    let dateString1 = "\(dateNext) \(dateStr)"
                     let dateNow = NSDate()
-                    println(dateNow)
-                    println(date)
-                    println(date!.compare(dateNow).rawValue)
+                    print(dateNow)
+                    print(date)
+                    print(date!.compare(dateNow).rawValue)
                     if(date!.compare(dateNow).rawValue == 1){
                     // Fade out to set the text
                     UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
@@ -72,15 +71,19 @@ class HomeViewController: UIViewController {
                 }
                // self.place.text = place
                
-           
+                }
                
-                var imageView1 = UIImageView()
+                let imageView1 = UIImageView()
                 if(imageString != nil){
                 ImageLoader.sharedLoader.imageForUrl(imageString!, completionHandler:{(image: UIImage?, url: String) in
                     imageView1.image =   Toucan(image: image!).resize(CGSize(width: 640, height: 360), fitMode: Toucan.Resize.FitMode.Crop).image
                     // Do any additional setup after loading the view.
                 })
                 }
+            case .Failure(let error):
+                print("Request failed with error: \(error)")
+                
+            
                 }
                 }
                 
@@ -88,24 +91,19 @@ class HomeViewController: UIViewController {
        
               //  headerTalkimage.addSubview(imageView1)
      
-    }
+    
     
     func loadNewVideo(){
   
-        var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCBBSZunZagb4bDBi3PSqd7Q&order=date&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&maxResults=50&part=snippet,contentDetails&pageToken=\(nextPageToken)"
+        let url = "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCBBSZunZagb4bDBi3PSqd7Q&order=date&key=AIzaSyA0T0fCHDyQzKCH0z0xs-i8Vh6DeSMcUuQ&maxResults=50&part=snippet,contentDetails&pageToken=\(nextPageToken)"
         
-        Alamofire.request(.GET, url, parameters:nil)
+        Alamofire.request(.GET, url,encoding: .URLEncodedInURL,parameters:nil).responseJSON { response in
             
-            .responseJSON { (req, res, dataFromNetworking, error) in
-                if(error != nil) {
-                    NSLog("GET Error: \(error)")
-                    println(res)
-                }
-                if(dataFromNetworking != nil){
-                    let json = JSON(dataFromNetworking!)
-                    
-                    var reponse = json["items"]
-                    var count = json["items"].count;
+            switch response.result {
+            case .Success(let data):
+                let json = JSON(data)
+                    _ = json["items"]
+                    let count = json["items"].count;
                     for var i = 0; i <= count; i++
                     {
                         if(json["items"][i]["id"]["videoId"] != nil){
@@ -113,7 +111,7 @@ class HomeViewController: UIViewController {
                                 name:json["items"][i]["snippet"]["title"].string!,
                                 desc:json["items"][i]["snippet"]["description"].string!))
                         }
-                        println(" \(i) = \(count)")
+                        print(" \(i) = \(count)")
                     }
                     
                     
@@ -122,31 +120,30 @@ class HomeViewController: UIViewController {
                     
                     if(json["nextPageToken"].string != nil) {
                         
-                        self.loadNewVideo()
+                       self.loadNewVideo()
                         
                    
-                } 
+                }
+            case .Failure(let error):
+                print("Request failed with error: \(error)")
+                
+                
+            
+                
         }
         }
         
     }
 
-    @IBAction func SupriceMe(sender: AnyObject) {
+    func SupriceMe(sender: AnyObject) {
        is_searching = false
         if(videos.count>0){
          let random =  randomInt(0,max: videos.count)
         selectedVideo = random
-        var storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        var modalVC: ItemViewController = storyboard.instantiateViewControllerWithIdentifier("item") as! ItemViewController
-        var navController = UINavigationController(rootViewController: modalVC)
-        
-       //   self.animator = ARNModalTransitonAnimator(modalViewController: navController)
-        
-       //   self.animator!.transitionDuration = 0.7
-      //    self.animator!.direction = .Bottom
-        
-        
-       //   navController.transitioningDelegate = self.animator!
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let modalVC: ItemViewController = storyboard.instantiateViewControllerWithIdentifier("item") as! ItemViewController
+        let navController = UINavigationController(rootViewController: modalVC)
+         
         self.presentViewController(navController, animated: true, completion: nil)
         }
     }

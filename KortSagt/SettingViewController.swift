@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 class SettingViewController: UIViewController {
     
     @IBOutlet weak var KortSagtdescription: UITextView!
@@ -19,22 +20,28 @@ class SettingViewController: UIViewController {
         let parameters : [ String : String] = [
             "access_token": "535078339963418|0cad57a5c0680b105fdb6a3bb6f71a72"
         ]
-        Alamofire.request(.GET, "https://graph.facebook.com/v2.3/kortsagt.nu", parameters:parameters)
+        let url = "https://graph.facebook.com/v2.3/kortsagt.nu"
+        
+        Alamofire.request(.GET, url,encoding: .URLEncodedInURL, parameters:parameters).responseJSON { response in
             
-            .responseJSON { (req, res, dataFromNetworking, error) in
-                
-                let json = JSON(dataFromNetworking!)
+            switch response.result {
+            case .Success(let data):
+                let json = JSON(data)
+       
           
                 let about = json["mission"].string
                 let description = json["description"].string
-                var desc  = "\(about!)\n\n\(description!)"
+                let desc  = "\(about!)\n\n\(description!)"
              
                 defaults.setObject(desc, forKey: "description")
              
             self.KortSagtdescription.text = desc
                 
-                    
+            case .Failure(let error):
+                print("Request failed with error: \(error)")
+                
         
+            }
         }
         if let description = defaults.stringForKey("description"){
        self.KortSagtdescription.text = description
